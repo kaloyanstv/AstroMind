@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulation</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Add a CSS file for styling -->
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="left-nav">
+                    <ul class="ul1">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+                <h1>AstroMind</h1>
+                <ul class="ul2">
+                    <li><a href="#key_points">Key Points</a></li>
+                    <li><a href="#usability">Usability</a></li>
+                    <li><a href="#contacts">Contacts</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <h1>Welcome to the AstroMind AI!</h1>
+    <p>Enter the names of the crew</p>
+
+    <div class="names">
+        <label for="commander">Commander:</label> 
+        <input type="text" id="commander"> <br>
+
+        <label for="engineer">Engineer:</label>  
+        <input type="text" id="engineer"> <br>
+
+        <label for="science">Science:</label>  
+        <input type="text" id="science"> <br>
+
+        <label for="pilot">Pilot:</label>  
+        <input type="text" id="pilot"> <br>
+
+        <label for="medic">Medic:</label>  
+        <input type="text" id="medic"> <br>
+    </div>
+
+    <h2>Enter Mission Problem</h2>
+    <p>Describe the problem your crew is facing:</p>
+    <textarea id="problem-description" rows="5" cols="50" placeholder="Type the problem here..."></textarea>
+
+    <h2>Select a Common Issue</h2>
+    <p>Choose from the most frequent problems encountered:</p>
+    <select id="common-problems">
+        <option value="">-- Select a Problem --</option>
+        <option value="oxygen-leak">Oxygen Leak</option>
+        <option value="engine-failure">Engine Failure</option>
+        <option value="navigation-error">Navigation Error</option>
+        <option value="power-outage">Power Outage</option>
+        <option value="communication-failure">Communication Failure</option>
+    </select>
+
+    <br><br>
+    <button class="button" onclick="submitProblem()">Submit Problem</button>
+
+    <script>
+        function submitProblem() {
+            let commander = document.getElementById("commander").value;
+            let engineer = document.getElementById("engineer").value;
+            let science = document.getElementById("science").value;
+            let pilot = document.getElementById("pilot").value;
+            let medic = document.getElementById("medic").value;
+            let problemDesc = document.getElementById("problem-description").value;
+            let commonProblem = document.getElementById("common-problems").value;
+
+            if (!problemDesc && !commonProblem) {
+                alert("Please enter a problem description or select a common problem.");
+                return;
+            }
+
+            let problemData = {
+                commander, engineer, science, pilot, medic,
+                problemDesc, commonProblem
+            };
+
+            console.log("Submitted Data:", problemData);
+            alert("Problem submitted successfully!");
+        }
+    </script>
+</body>
+</html>

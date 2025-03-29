@@ -81,7 +81,7 @@
   <body>
     <img id="stars" src="{{ url_for('static',filename='styles/cosmos-rawpixel-scaled.jpg') }}" alt="Stars" />
     <div class="gradient">
-      <a href="/home">
+      <a href="/AstroMind/templates/index.html">
         <img src="{{ url_for('static',filename='styles/FullLogo.png') }}" alt="LOGO START" class="center-image" />
       </a>
     </div>
@@ -103,7 +103,7 @@
 
       // Redirect after animation
       setTimeout(() => {
-        window.location.href = "/home";
+        window.location.href = "start.html";
       }, 1000); // Matches the fade-out timing
     });
 </script>

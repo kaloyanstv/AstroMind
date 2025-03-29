@@ -17,6 +17,9 @@ thread = project_client.agents.create_thread()
 @app.route("/")
 def home():
     return render_template("index.html")
+@app.route('/home')
+def generic():
+    return render_template('start.html')
 
 @app.route("/genprofiles", methods=["POST"])
 def genprofiles():

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Audiowide"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Audiowide";
+        font-size: 22px;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <header>
+      <img id="logo" src="{{ url_for('static',filename='styles/croppedLogoIMG.png') }}" alt="Logo" />
+      <nav>
+        <a href="#">Home</a>
+        <a href="simulator.html">Control Deck</a>
+        <a href="#">Our Team</a>
+        <a href="#">Settings</a>
+      </nav>
+    </header>
+    <div class="all">
+      <img id="stars" src="{{ url_for('static',filename='styles/cosmos-rawpixel-scaled.jpg') }}" alt="Stars" />
+      <div class="next-intro">
+    <div class="hero">
+      <h2>Explore the Cosmos with AstroMind</h2>
+      <p>An advanced space simulation experience driven by AI.</p>
+      <div class="run"><a href="simulator.html">Run Simulation</a> </div>      
+      <!-- I think you can do the CSS by dividing the section into 1/3rds and putting the title above the paragraph-->
+    </div>
+    <section class="start">
+      <div class="explain">
+      <h2>What is AstroMind?</h2>
+      <div class="answer">
+        <p>AstroMind is an AI-driven space psychology simulator where you step into Mission Control and navigate the unseen challenges of deep space. Astronauts aren’t just explorers—they're humans with unique behaviors, emotions, and reactions. Your mission? Analyze crew dynamics, solve unpredictable crises, and make critical decisions that could mean survival or failure.
+
+          Blending AI, psychology, and space exploration, AstroMind reveals what’s usually invisible, turning the unknown into insight. Are you ready to think like an astronaut, decide like a leader, and explore beyond the stars?</p>
+      </div>
+    </div>
+    </div>
+      <!--I recommend putting a little bit of a margin/padding on the left or right for the text so that it isnt as stretched-->
+    </section>
+    <div class="key">
+      <h2>Key Features</h2>
+      <div class="features">
+        <div class="card">
+          <h3> &#128640; Realistic Space Simulations</h3>
+        </div>
+        <div class="card">
+          <h3> 	&#129302; AI-Powered Crew Interactions</h3>
+        </div>
+        <div class="card">
+          <h3>&#129504; Decision Feedback System</h3>
+        </div>
+        <div class="card">
+          <h3> &#127756; Immersive Space Experience</h3>
+        </div>
+      </div>
+      <!-- Here idk what else to put as text, for all of the info you can put it in a window like box and make them interactive if you feel like it-->
+    </div>
+    <section class="how">
+      <h2>How It Works</h2>
+      <div class="how-container">
+        <div class="how-step">
+          <h3>Pick a Scenario</h3>
+          <p>Choose a space mission challenge to face. 
+            Select a pre-made scenario to save time and improve your experience.  </p>
+        </div>
+        <div class="how-step">
+          <h3>Analyze the Crew’s Reactions</h3>
+          <p>AI generates astronaut behavioral responses.</p>
+        </div>
+        <div class="how-step">
+          <h3>Decide & Get Feedback</h3>
+          <p>Make a choice, see if it leads to mission success and gain new knowledge using our project.</p>
+        </div>
+      </div>
+    </section>
+    <section class="cta">
+      <h2>Ready to Begin Your Space Journey?</h2>
+      <div class="mission"><a href="simulator.html">Start your mission now</a></div>   
+    </section>
+      <section class="meet-the-crew">
+        <h2>Meet the Crew</h2>        
+        <p>Get to know the team behind the projects.</p>
+        <div class="crew-grid">
+          <div class="person">
+            <h3>Name</h3>
+            <p>Marketing</p>
+          </div>
+          <div class="person">
+            <h3>Name</h3>
+            <p>Marketing</p>
+          </div>
+          <div class="person">
+            <h3>Name</h3>
+            <p>Design</p>
+          </div>
+          <div class="person">
+            <h3>Name</h3>
+            <p>Design</p>
+          </div>
+          <div class="person">
+            <h3>Name</h3>
+            <p>Coding</p>
+          </div>
+        </div>
+      </section>
+    <!--we can do it like this where we have a 3x2 box without one of the boxes at the end going from top to bottom,or backwards if you want to change the way its designed-->
+    <footer id="contact">
+      <div class="footer-container">
+        <div class="contact-info">
+          <h3>Contact Us</h3>
+          <p>Email: <a href="mailto:">Email</a></p>
+          <!--email if we need it idk what email to put in so it is blank-->
+          <p>Phone:</p>
+          <!--dont know about this aswell-->
+        </div>
+        <section id="feedback">
+          <h2>Send Us Your Feedback</h2>
+          <form id="feedback-form" action="https://formspree.io/f/mnnpbbqz" method="POST">
+              <label for="name">Your Name:</label>
+              <input type="text" id="name" name="name" placeholder="Enter your name" required>
+          
+              <label for="email">Your Email:</label>
+              <input type="email" id="email" name="email" placeholder="Enter your email" required>
+          
+              <label for="message">Your Feedback:</label>
+              <textarea id="message" name="message" placeholder="Write your thoughts here..." rows="5" required></textarea>
+          
+              <button type="submit" class="submit-btn">Submit</button>
+          </form>            
+      </section>
+        <div class="social-media">
+          <h3>Follow Us</h3>
+          <a href="#"><img src="icons/facebook.png" alt="Facebook" /></a>
+          <a href="#"><img src="icons/twitter.png" alt="Twitter" /></a>
+          <a href="#"><img src="icons/instagram.png" alt="Instagram" /></a>
+          <!-- you can also choose only 1 of the 3 if you want just delete them-->
+        </div>
+      </div>
+    </div>
+      <p class="footer-note">&copy; 2025 AstroMind.</p>
+    </footer>
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Team Simulator</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .section { margin-bottom: 30px; }
+    .input-group { margin-bottom: 10px; }
+    label { display: inline-block; width: 200px; }
+    #conversation { border: 1px solid #ccc; padding: 10px; height: 250px; overflow-y: scroll; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <h1>Team Simulator</h1>
+  
+  <!-- Profile & Incident Input Section -->
+  <div class="section" id="input-section">
+    <h2>Enter Real People Names &amp; Select an Incident</h2>
+    <form id="profile-form">
+      <div class="input-group">
+        <label for="name_commander">Commander:</label>
+        <input type="text" id="name_commander" name="name_commander" required>
+      </div>
+      <div class="input-group">
+        <label for="name_engineer">Engineer:</label>
+        <input type="text" id="name_engineer" name="name_engineer" required>
+      </div>
+      <div class="input-group">
+        <label for="name_scientist">Scientist:</label>
+        <input type="text" id="name_scientist" name="name_scientist" required>
+      </div>
+      <div class="input-group">
+        <label for="name_pilot">Pilot:</label>
+        <input type="text" id="name_pilot" name="name_pilot" required>
+      </div>
+      <div class="input-group">
+        <label for="name_medic">Medic:</label>
+        <input type="text" id="name_medic" name="name_medic" required>
+      </div>
+      <div class="input-group">
+        <label for="incident">Select Incident:</label>
+        <select id="incident" name="incident" required>
+          <optgroup label="Technical/Systems Issues">
+            <option value="Communication Blackout – Temporary loss of contact with Mission Control.">Communication Blackout</option>
+            <option value="Oxygen Level Fluctuation – Oxygen levels outside nominal range; possible leak or system fault.">Oxygen Level Fluctuation</option>
+            <option value="Power System Failure – Batteries or solar arrays not delivering enough power.">Power System Failure</option>
+            <option value="Gyroscope Malfunction – Loss of orientation stability; attitude control affected.">Gyroscope Malfunction</option>
+            <option value="Propulsion System Anomaly – Thrusters misfiring or failing to respond.">Propulsion System Anomaly</option>
+            <option value="Environmental Control Failure – Temperature or humidity outside safe levels.">Environmental Control Failure</option>
+          </optgroup>
+          <optgroup label="Human/Behavioral Issues">
+            <option value="Crew Fatigue – Reduced focus and cognitive function from poor sleep or overwork.">Crew Fatigue</option>
+            <option value="Interpersonal Conflict – Tension or disagreement between two or more crew members.">Interpersonal Conflict</option>
+            <option value="Isolation-Induced Depression – A crew member shows signs of emotional withdrawal.">Isolation-Induced Depression</option>
+            <option value="Panic Attack / Anxiety Episode – One astronaut has a psychological breakdown or panic moment.">Panic Attack / Anxiety Episode</option>
+          </optgroup>
+          <optgroup label="Mission & Scientific Challenges">
+            <option value="Experiment Contamination – Scientific samples or results compromised due to procedural lapse.">Experiment Contamination</option>
+            <option value="Loss of Tool During EVA – A piece of equipment or tool is lost outside the spacecraft.">Loss of Tool During EVA</option>
+            <option value="Unexpected Data Anomalies – Scientific instruments provide erratic or corrupted data.">Unexpected Data Anomalies</option>
+          </optgroup>
+        </select>        
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  
+  <!-- Conversation Display Section (hidden until profiles & incident submitted) -->
+  <div class="section" id="conversation-section" style="display: none;">
+    <h2>Team Conversation</h2>
+    <div id="conversation"></div>
+  </div>
+  
+  <!-- Proposed Solution Section (hidden until profiles & incident submitted) -->
+  <div class="section" id="solution-section" style="display: none;">
+    <h2>Propose a Solution</h2>
+    <form id="solution-form">
+      <input type="text" id="solution_input" name="solution_input" placeholder="Enter your solution" required>
+      <!-- "Send to Chat" updates the chat box with ProblemAI’s answer -->
+      <button type="button" id="send_to_chat">Send to Chat</button>
+      <!-- "Validate Solution" triggers GodAI validation (pop-up only) -->
+      <button type="button" id="validate_solution">Validate Solution</button>
+    </form>
+  </div>
+  
+  <script>
+    // Handle profile & incident form submission.
+    document.getElementById("profile-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      fetch("/genprofiles", {
+        method: "POST",
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        // Hide the input section and show the conversation and solution sections.
+        document.getElementById("input-section").style.display = "none";
+        document.getElementById("conversation-section").style.display = "block";
+        document.getElementById("solution-section").style.display = "block";
+        document.getElementById("conversation").textContent = data.conversation;
+      })
+      .catch(err => console.error(err));
+    });
+    
+    // Handle sending the solution message to the chat box (answer endpoint).
+    document.getElementById("send_to_chat").addEventListener("click", function(e) {
+      e.preventDefault();
+      const formData = new FormData(document.getElementById("solution-form"));
+      fetch("/answer", {
+        method: "POST",
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        const conversationDiv = document.getElementById("conversation");
+        conversationDiv.textContent += "\n" + data.conversation;
+        document.getElementById("solution_input").value = "";
+      })
+      .catch(err => console.error(err));
+    });
+    
+    // Handle validating the solution (validate_solution endpoint).
+    document.getElementById("validate_solution").addEventListener("click", function(e) {
+      e.preventDefault();
+      const formData = new FormData(document.getElementById("solution-form"));
+      fetch("/validate_solution", {
+        method: "POST",
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        // Show GodAI feedback only in a pop-up.
+        alert("GodAI feedback:\n" + data.validation);
+      })
+      .catch(err => console.error(err));
+    });
+  </script>
+</body>
+</html>
