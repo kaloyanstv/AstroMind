@@ -29,6 +29,7 @@
     </header>
     <div class="all">
       <img id="stars" src="cosmos-rawpixel-scaled.jpg" alt="Stars" />
+      <div class="next-intro">
     <div class="hero">
       <h2>Explore the Cosmos with AstroMind</h2>
       <p>An advanced space simulation experience driven by AI.</p>
@@ -36,50 +37,56 @@
       <!-- I think you can do the CSS by dividing the section into 1/3rds and putting the title above the paragraph-->
     </div>
     <section class="start">
-      <h2>What is Astromind</h2>
+      <div class="explain">
+      <h2>What is AstroMind?</h2>
       <div class="answer">
         <p>AstroMind is an AI-driven space psychology simulator where you step into Mission Control and navigate the unseen challenges of deep space. Astronauts aren’t just explorers—they're humans with unique behaviors, emotions, and reactions. Your mission? Analyze crew dynamics, solve unpredictable crises, and make critical decisions that could mean survival or failure.
 
           Blending AI, psychology, and space exploration, AstroMind reveals what’s usually invisible, turning the unknown into insight. Are you ready to think like an astronaut, decide like a leader, and explore beyond the stars?</p>
       </div>
+    </div>
+    </div>
       <!--I recommend putting a little bit of a margin/padding on the left or right for the text so that it isnt as stretched-->
     </section>
     <div class="key">
       <h2>Key Features</h2>
       <div class="features">
         <div class="card">
-          <h3>Realistic Space Simulations</h3>
-          <p>Insert Text Here.</p>
+          <h3> &#128640; Realistic Space Simulations</h3>
         </div>
         <div class="card">
-          <h3>AI-Powered Crew Interactions</h3>
-          <p>Insert Text Here.</p>
+          <h3> 	&#129302; AI-Powered Crew Interactions</h3>
         </div>
         <div class="card">
-          <h3>Decision Feedback System</h3>
-          <p>Insert Text Here.</p>
+          <h3>&#129504; Decision Feedback System</h3>
         </div>
         <div class="card">
-          <h3>Immersive Space Experience</h3>
-          <p>Insert Text Here.</p>
+          <h3> &#127756; Immersive Space Experience</h3>
         </div>
       </div>
       <!-- Here idk what else to put as text, for all of the info you can put it in a window like box and make them interactive if you feel like it-->
     </div>
     <section class="how">
       <h2>How It Works</h2>
-      <ol>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ol>
+      <div class="how-container">
+        <div class="how-step">
+          <h3>Pick a Scenario</h3>
+          <p>Select a space mission challenge.</p>
+        </div>
+        <div class="how-step">
+          <h3>Analyze the Crew’s Reactions</h3>
+          <p>AI generates astronaut behavioral responses.</p>
+        </div>
+        <div class="how-step">
+          <h3>Decide & Get Feedback</h3>
+          <p>Make a choice, and see if it leads to mission success.</p>
+        </div>
+      </div>
     </section>
     <!--List of things that explain it easily-->
     <section class="cta">
       <h2>Ready to Begin Your Space Journey?</h2>
-      <button class="button">Start Your Mission Now</button>
+      <div class="mission"><a href="simulator.html">Start your mission now</a></div>   
     </section>
     <!-- you can make the button more flashy and maybe a different color so that it catches the eye and stands out-->
     <section class="meet-the-crew">
@@ -121,27 +128,21 @@
           <p>Phone:</p>
           <!--dont know about this aswell-->
         </div>
-        <div class="feedback-form">
-          <h3>Send Us Feedback</h3>
-          <form action="mailto:" method="POST" enctype="text/plain">
-            <input type="text" name="name" placeholder="Your Name" required />
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              required
-            />
-            <textarea
-              name="message"
-              placeholder="Your Message"
-              rows="4"
-              required
-            ></textarea>
-            <button type="submit" class="button">Send Message</button>
-            <!--this is a simple form if you want them to fill out a form-->
-          </form>
-          <!-- for both the form and email there is no email in the mailto: box,if we need one we can add it on later and test-->
-        </div>
+        <section id="feedback">
+          <h2>Send Us Your Feedback</h2>
+          <form id="feedback-form" action="https://formspree.io/f/mnnpbbqz" method="POST">
+              <label for="name">Your Name:</label>
+              <input type="text" id="name" name="name" placeholder="Enter your name" required>
+          
+              <label for="email">Your Email:</label>
+              <input type="email" id="email" name="email" placeholder="Enter your email" required>
+          
+              <label for="message">Your Feedback:</label>
+              <textarea id="message" name="message" placeholder="Write your thoughts here..." rows="5" required></textarea>
+          
+              <button type="submit" class="submit-btn">Submit</button>
+          </form>            
+      </section>
         <div class="social-media">
           <h3>Follow Us</h3>
           <a href="#"><img src="icons/facebook.png" alt="Facebook" /></a>
