@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AstroMind</title>
 </head>
 <body>
@@ -27,7 +27,7 @@
     <section class="hero">
         <h2>Explore the Cosmos with AstroMind</h2>
         <p>An advanced space simulation experience driven by AI.</p>
-        <button class="button"><a href="sim.html">Run Simulation</a></button> <!-- I think you can do the CSS by dividing the section into 1/3rds and putting the title above the paragraph-->
+        <button class="button">Run Simulation</button> <!-- I think you can do the CSS by dividing the section into 1/3rds and putting the title above the paragraph-->
     </section>
     <section class="start">
      <h2>What is Astromind</h2>
@@ -66,7 +66,7 @@
     </section> <!--List of things that explain it easily-->
     <section class="cta">
         <h2>Ready to Begin Your Space Journey?</h2>
-        <button class="button"><a href="sign.html">Start Your Mission Now</a></button>
+        <button class="button">Start Your Mission Now</button>
     </section> <!-- you can make the button more flashy and maybe a different color so that it catches the eye and stands out-->
     <section class="meet-the-crew">
         <h2>Meet the Crew</h2>
@@ -118,7 +118,25 @@
             <a href="#"><img src="icons/instagram.png" alt="Instagram"></a> <!-- you can also choose only 1 of the 3 if you want just delete them-->
         </div>
     </div>
-    <p class="footer-note">&copy; 2025 AstroMind.</p>
-</footer>
-</body>
+  </body>
 </html>
+<script>
+  document
+    .querySelector(".center-image")
+    .addEventListener("click", function (e) {
+      e.preventDefault(); // Prevent instant redirection
+      let logo = document.querySelector(".center-image");
+      let overlay = document.createElement("div");
+      overlay.classList.add("screen-overlay");
+      document.body.appendChild(overlay); // Add overlay effect
+
+      // Apply animations
+      logo.classList.add("clicked");
+      overlay.classList.add("active");
+
+      // Redirect after animation
+      setTimeout(() => {
+        window.location.href = "start.html";
+      }, 1000); // Matches the fade-out timing
+    });
+</script>
