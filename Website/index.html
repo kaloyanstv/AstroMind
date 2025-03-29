@@ -1,124 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AstroMind</title>
-</head>
-<body>
-    <header>
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="left-nav">
-                    <ul class="ul1">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                    </ul>
-                </div>
-                <h1>AstroMind</h1>
-                <ul class="ul2">
-                    <li><a href="#key_points">Key Points</a></li>
-                    <li><a href="#usability">Usability</a></li>
-                    <li><a href="#contacts">Contacts</a></li>
-                </ul>
-            </div>
-        </nav> <!--for the nav refer to my css and copy the classes, it is a bit complex-->
-    </header>
-    <section class="hero">
-        <h2>Explore the Cosmos with AstroMind</h2>
-        <p>An advanced space simulation experience driven by AI.</p>
-        <button class="button">Run Simulation</button> <!-- I think you can do the CSS by dividing the section into 1/3rds and putting the title above the paragraph-->
-    </section>
-    <section class="start">
-     <h2>What is Astromind</h2>
-     <p>Insert Text Here.</p> <!--I recommend putting a little bit of a margin/padding on the left or right for the text so that it isnt as stretched-->
-    </section>
-    <section class="key">
-     <h2>Key Features</h2>
-    <div class="features">
-      <div class="card">
-        <h3>Realistic Space Simulations</h3>
-        <p>Insert Text Here.</p>
-      </div>
-      <div class="card">
-        <h3>AI-Powered Crew Interactions</h3>
-        <p>Insert Text Here.</p>
-      </div>
-      <div class="card">
-        <h3>Decision Feedback System</h3>
-        <p>Insert Text Here.</p>
-      </div>
-      <div class="card">
-        <h3>Immersive Space Experience</h3>
-        <p>Insert Text Here.</p>
-      </div>
-     </div> <!-- Here idk what else to put as text, for all of the info you can put it in a window like box and make them interactive if you feel like it-->
-    </section>
-    <section class="how">
-        <h2>How It Works</h2>
-        <ol>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ol>
-    </section> <!--List of things that explain it easily-->
-    <section class="cta">
-        <h2>Ready to Begin Your Space Journey?</h2>
-        <button class="button">Start Your Mission Now</button>
-    </section> <!-- you can make the button more flashy and maybe a different color so that it catches the eye and stands out-->
-    <section class="meet-the-crew">
-        <h2>Meet the Crew</h2>
-        <p>Get to know the team behind the projects.</p>
-        <h4>Marketing Section</h4>
-        <div class="person">
-          <h3>Name.</h3>
-          <p>About.</p>
-        </div>
-        <div class="person">
-            <h3>Name.</h3>
-            <p>About.</p>
-        </div>
-        <h4>Design Section</h4>
-        <div class="person">
-            <h3>Name.</h3>
-            <p>About.</p>
-        </div>
-        <div class="person">
-            <h3>Name.</h3>
-            <p>About.</p>
-        </div>
-        <h4>Coding Section</h4>
-        <div class="person">
-            <h3>Name.</h3>
-            <p>About.</p>
-        </div>
-    </section> <!--we can do it like this where we have a 3x2 box without one of the boxes at the end going from top to bottom,or backwards if you want to change the way its designed-->
-<footer id="contact">
-    <div class="footer-container">
-        <div class="contact-info">
-            <h3>Contact Us</h3>
-            <p>Email: <a href="mailto:">Email</a></p> <!--email if we need it idk what email to put in so it is blank-->
-            <p>Phone: </p> <!--dont know about this aswell-->
-        </div>
-        <div class="feedback-form">
-            <h3>Send Us Feedback</h3>
-            <form action="mailto:" method="POST" enctype="text/plain">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-                <button type="submit" class="button">Send Message</button> <!--this is a simple form if you want them to fill out a form-->
-            </form> <!-- for both the form and email there is no email in the mailto: box,if we need one we can add it on later and test-->
-        </div>
-        <div class="social-media">
-            <h3>Follow Us</h3>
-            <a href="#"><img src="icons/facebook.png" alt="Facebook"></a>
-            <a href="#"><img src="icons/twitter.png" alt="Twitter"></a>
-            <a href="#"><img src="icons/instagram.png" alt="Instagram"></a> <!-- you can also choose only 1 of the 3 if you want just delete them-->
-        </div>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(white, #4ab6fe, #160737);
+      height: 100vh;
+    }
+
+    .gradient {
+      width: 300px;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #stars {
+      position: relative;
+      opacity: 50%;
+      z-index: 0;
+    }
+
+    .center-image {
+      position: relative;
+      width: 1000px;
+      height: auto;
+      filter: drop-shadow(0px 1px 20px rgba(255, 255, 255, 1))
+        drop-shadow(0px 1px 40px rgba(255, 255, 255, 0.9))
+        drop-shadow(0px 1px 60px rgba(255, 255, 255, 0.8));
+      z-index: 2;
+    }
+    .screen-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0);
+      transition: background 1s ease-in-out;
+      z-index: 1;
+    }
+
+    .center-image.clicked {
+      transform: scale(1.2);
+      opacity: 0;
+      transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+    }
+
+    .screen-overlay.active {
+      background: rgb(0, 0, 0);
+    }
+
+    #stars {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensures full coverage */
+      opacity: 0.3; /* Adjust transparency (lower = more transparent) */
+      z-index: 0; /* Sends it to the back */
+    }
+  </style>
+  <body>
+    <img id="stars" src="cosmos-rawpixel-scaled.jpg" alt="Stars" />
+    <div class="gradient">
+      <a href="start.html">
+        <img src="FullLogo.png" alt="LOGO START" class="center-image" />
+      </a>
     </div>
-    <p class="footer-note">&copy; 2025 AstroMind.</p>
-</footer>
-</body>
+  </body>
 </html>
+<script>
+  document
+    .querySelector(".center-image")
+    .addEventListener("click", function (e) {
+      e.preventDefault(); // Prevent instant redirection
+      let logo = document.querySelector(".center-image");
+      let overlay = document.createElement("div");
+      overlay.classList.add("screen-overlay");
+      document.body.appendChild(overlay); // Add overlay effect
+
+      // Apply animations
+      logo.classList.add("clicked");
+      overlay.classList.add("active");
+
+      // Redirect after animation
+      setTimeout(() => {
+        window.location.href = "start.html";
+      }, 1000); // Matches the fade-out timing
+    });
+</script>

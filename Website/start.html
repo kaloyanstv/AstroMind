@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Audiowide"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Audiowide";
+        font-size: 22px;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <header>
+      <img id="logo" src="croppedLogoIMG.png" alt="Logo" />
+      <nav>
+        <a href="#">Home</a>
+        <a href="simulator.html">Control Deck</a>
+        <a href="#">Our Team</a>
+        <a href="#">Settings</a>
+      </nav>
+    </header>
+    <div class="all">
+      <img id="stars" src="cosmos-rawpixel-scaled.jpg" alt="Stars" />
+    <div class="hero">
+      <h2>Explore the Cosmos with AstroMind</h2>
+      <p>An advanced space simulation experience driven by AI.</p>
+      <div class="run"><a href="simulator.html">Run Simulation</a> </div>      
+      <!-- I think you can do the CSS by dividing the section into 1/3rds and putting the title above the paragraph-->
+    </div>
+    <section class="start">
+      <h2>What is Astromind</h2>
+      <div class="answer">
+        <p>AstroMind is an AI-driven space psychology simulator where you step into Mission Control and navigate the unseen challenges of deep space. Astronauts aren’t just explorers—they're humans with unique behaviors, emotions, and reactions. Your mission? Analyze crew dynamics, solve unpredictable crises, and make critical decisions that could mean survival or failure.
+
+          Blending AI, psychology, and space exploration, AstroMind reveals what’s usually invisible, turning the unknown into insight. Are you ready to think like an astronaut, decide like a leader, and explore beyond the stars?</p>
+      </div>
+      <!--I recommend putting a little bit of a margin/padding on the left or right for the text so that it isnt as stretched-->
+    </section>
+    <div class="key">
+      <h2>Key Features</h2>
+      <div class="features">
+        <div class="card">
+          <h3>Realistic Space Simulations</h3>
+          <p>Insert Text Here.</p>
+        </div>
+        <div class="card">
+          <h3>AI-Powered Crew Interactions</h3>
+          <p>Insert Text Here.</p>
+        </div>
+        <div class="card">
+          <h3>Decision Feedback System</h3>
+          <p>Insert Text Here.</p>
+        </div>
+        <div class="card">
+          <h3>Immersive Space Experience</h3>
+          <p>Insert Text Here.</p>
+        </div>
+      </div>
+      <!-- Here idk what else to put as text, for all of the info you can put it in a window like box and make them interactive if you feel like it-->
+    </div>
+    <section class="how">
+      <h2>How It Works</h2>
+      <ol>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ol>
+    </section>
+    <!--List of things that explain it easily-->
+    <section class="cta">
+      <h2>Ready to Begin Your Space Journey?</h2>
+      <button class="button">Start Your Mission Now</button>
+    </section>
+    <!-- you can make the button more flashy and maybe a different color so that it catches the eye and stands out-->
+    <section class="meet-the-crew">
+      <h2>Meet the Crew</h2>
+      <p>Get to know the team behind the projects.</p>
+      <section class="meet-the-crew">
+        <h2>Meet the Crew</h2>
+        <p>Get to know the team behind the projects.</p>
+        <div class="crew-grid">
+          <div class="person">
+            <h3>Name</h3>
+            <p>Marketing</p>
+          </div>
+          <div class="person">
+            <h3>Name</h3>
+            <p>Marketing</p>
+          </div>
+          <div class="person">
+            <h3>Name</h3>
+            <p>Design</p>
+          </div>
+          <div class="person">
+            <h3>Name</h3>
+            <p>Design</p>
+          </div>
+          <div class="person">
+            <h3>Name</h3>
+            <p>Coding</p>
+          </div>
+        </div>
+      </section>
+    <!--we can do it like this where we have a 3x2 box without one of the boxes at the end going from top to bottom,or backwards if you want to change the way its designed-->
+    <footer id="contact">
+      <div class="footer-container">
+        <div class="contact-info">
+          <h3>Contact Us</h3>
+          <p>Email: <a href="mailto:">Email</a></p>
+          <!--email if we need it idk what email to put in so it is blank-->
+          <p>Phone:</p>
+          <!--dont know about this aswell-->
+        </div>
+        <div class="feedback-form">
+          <h3>Send Us Feedback</h3>
+          <form action="mailto:" method="POST" enctype="text/plain">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+            <textarea
+              name="message"
+              placeholder="Your Message"
+              rows="4"
+              required
+            ></textarea>
+            <button type="submit" class="button">Send Message</button>
+            <!--this is a simple form if you want them to fill out a form-->
+          </form>
+          <!-- for both the form and email there is no email in the mailto: box,if we need one we can add it on later and test-->
+        </div>
+        <div class="social-media">
+          <h3>Follow Us</h3>
+          <a href="#"><img src="icons/facebook.png" alt="Facebook" /></a>
+          <a href="#"><img src="icons/twitter.png" alt="Twitter" /></a>
+          <a href="#"><img src="icons/instagram.png" alt="Instagram" /></a>
+          <!-- you can also choose only 1 of the 3 if you want just delete them-->
+        </div>
+      </div>
+    </div>
+      <p class="footer-note">&copy; 2025 AstroMind.</p>
+    </footer>
+  </body>
+</html>
