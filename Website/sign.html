@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Create an AstroMind Account</h2>
+    <form id="register-form">
+        <label for="register-username">Username:</label>
+        <input type="text" id="register-username" required>
+        <span class="error-message" id="register-username-error"></span>
+
+        <label for="register-password">Password:</label>
+        <input type="password" id="register-password" required minlength="6">
+        <span class="error-message" id="register-password-error"></span>
+
+        <button type="submit">Sign Up</button>
+    </form>
+
+    <p>Already have an account? <a href="login.html">Login here</a></p>
+
+    <script src="auth.js"></script>
+</body>
+</html>
+
+
+
