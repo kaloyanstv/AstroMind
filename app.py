@@ -132,6 +132,5 @@ def validate_solution():
             validation_text += msg.text.value + "\n"
     # Return only the validation feedback.
     return jsonify({"validation": validation_text})
-
 if __name__ == "__main__":
-    app.run(debug=True, port=8000)
+    app.run(host="0.0.0.0", port=8000)
