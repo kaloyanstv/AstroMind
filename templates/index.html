@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Team Simulator</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .section { margin-bottom: 30px; }
+    .input-group { margin-bottom: 10px; }
+    label { display: inline-block; width: 200px; }
+    #conversation { border: 1px solid #ccc; padding: 10px; height: 250px; overflow-y: scroll; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <h1>Team Simulator</h1>
+  
+  <!-- Profile & Incident Input Section -->
+  <div class="section" id="input-section">
+    <h2>Enter Real People Names &amp; Select an Incident</h2>
+    <form id="profile-form">
+      <div class="input-group">
+        <label for="name_commander">Commander:</label>
+        <input type="text" id="name_commander" name="name_commander" required>
+      </div>
+      <div class="input-group">
+        <label for="name_engineer">Engineer:</label>
+        <input type="text" id="name_engineer" name="name_engineer" required>
+      </div>
+      <div class="input-group">
+        <label for="name_scientist">Scientist:</label>
+        <input type="text" id="name_scientist" name="name_scientist" required>
+      </div>
+      <div class="input-group">
+        <label for="name_pilot">Pilot:</label>
+        <input type="text" id="name_pilot" name="name_pilot" required>
+      </div>
+      <div class="input-group">
+        <label for="name_medic">Medic:</label>
+        <input type="text" id="name_medic" name="name_medic" required>
+      </div>
+      <div class="input-group">
+        <label for="incident">Select Incident:</label>
+        <select id="incident" name="incident" required>
+          <optgroup label="Technical/Systems Issues">
+            <option value="Communication Blackout – Temporary loss of contact with Mission Control.">Communication Blackout</option>
+            <option value="Oxygen Level Fluctuation – Oxygen levels outside nominal range; possible leak or system fault.">Oxygen Level Fluctuation</option>
+            <option value="Power System Failure – Batteries or solar arrays not delivering enough power.">Power System Failure</option>
+            <option value="Gyroscope Malfunction – Loss of orientation stability; attitude control affected.">Gyroscope Malfunction</option>
+            <option value="Propulsion System Anomaly – Thrusters misfiring or failing to respond.">Propulsion System Anomaly</option>
+            <option value="Environmental Control Failure – Temperature or humidity outside safe levels.">Environmental Control Failure</option>
+          </optgroup>
+          <optgroup label="Human/Behavioral Issues">
+            <option value="Crew Fatigue – Reduced focus and cognitive function from poor sleep or overwork.">Crew Fatigue</option>
+            <option value="Interpersonal Conflict – Tension or disagreement between two or more crew members.">Interpersonal Conflict</option>
+            <option value="Isolation-Induced Depression – A crew member shows signs of emotional withdrawal.">Isolation-Induced Depression</option>
+            <option value="Panic Attack / Anxiety Episode – One astronaut has a psychological breakdown or panic moment.">Panic Attack / Anxiety Episode</option>
+          </optgroup>
+          <optgroup label="Mission & Scientific Challenges">
+            <option value="Experiment Contamination – Scientific samples or results compromised due to procedural lapse.">Experiment Contamination</option>
+            <option value="Loss of Tool During EVA – A piece of equipment or tool is lost outside the spacecraft.">Loss of Tool During EVA</option>
+            <option value="Unexpected Data Anomalies – Scientific instruments provide erratic or corrupted data.">Unexpected Data Anomalies</option>
+          </optgroup>
+        </select>        
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  
+  <!-- Conversation Display Section (hidden until profiles & incident submitted) -->
+  <div class="section" id="conversation-section" style="display: none;">
+    <h2>Team Conversation</h2>
+    <div id="conversation"></div>
+  </div>
+  
+  <!-- Proposed Solution Section (hidden until profiles & incident submitted) -->
+  <div class="section" id="solution-section" style="display: none;">
+    <h2>Propose a Solution</h2>
+    <form id="solution-form">
+      <input type="text" id="solution_input" name="solution_input" placeholder="Enter your solution" required>
+      <!-- "Send to Chat" updates the chat box with ProblemAI’s answer -->
+      <button type="button" id="send_to_chat">Send to Chat</button>
+      <!-- "Validate Solution" triggers GodAI validation (pop-up only) -->
+      <button type="button" id="validate_solution">Validate Solution</button>
+    </form>
+  </div>
+  
+  <script>
+    // Handle profile & incident form submission.
+    document.getElementById("profile-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      fetch("/genprofiles", {
+        method: "POST",
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        // Hide the input section and show the conversation and solution sections.
+        document.getElementById("input-section").style.display = "none";
+        document.getElementById("conversation-section").style.display = "block";
+        document.getElementById("solution-section").style.display = "block";
+        document.getElementById("conversation").textContent = data.conversation;
+      })
+      .catch(err => console.error(err));
+    });
+    
+    // Handle sending the solution message to the chat box (answer endpoint).
+    document.getElementById("send_to_chat").addEventListener("click", function(e) {
+      e.preventDefault();
+      const formData = new FormData(document.getElementById("solution-form"));
+      fetch("/answer", {
+        method: "POST",
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        const conversationDiv = document.getElementById("conversation");
+        conversationDiv.textContent += "\n" + data.conversation;
+        document.getElementById("solution_input").value = "";
+      })
+      .catch(err => console.error(err));
+    });
+    
+    // Handle validating the solution (validate_solution endpoint).
+    document.getElementById("validate_solution").addEventListener("click", function(e) {
+      e.preventDefault();
+      const formData = new FormData(document.getElementById("solution-form"));
+      fetch("/validate_solution", {
+        method: "POST",
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        // Show GodAI feedback only in a pop-up.
+        alert("GodAI feedback:\n" + data.validation);
+      })
+      .catch(err => console.error(err));
+    });
+  </script>
+</body>
+</html>
