@@ -1,0 +1,428 @@
+body {
+  background-color: rgba(0, 255, 255, 0.345);
+  margin: 0; /* Remove default margin */
+  font-family: "Audiowide";
+  font-size: 22px;
+  color: rgb(4, 21, 70);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  text-align: right;
+  background: rgb(6, 7, 61);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  z-index: 100;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+nav {
+  margin-left: auto;
+  margin-top: 10px;
+  display: flex;
+  padding-right: 15px;
+}
+
+#logo {
+  width: 150px;
+  height: auto;
+  background-color: none;
+  align-items: self-start;
+  margin-top: 0;
+  justify-content: flex-start;
+  filter: drop-shadow(0px 1px 20px rgba(255, 255, 255, 1))
+    drop-shadow(0px 1px 40px rgba(255, 255, 255, 0.9))
+    drop-shadow(0px 1px 60px rgba(255, 255, 255, 0.8));
+  padding-left: 50px;
+}
+
+nav a {
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.2rem;
+  transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+  color: cyan;
+  text-shadow: 0px 0px 10px cyan;
+}
+
+.hero {
+  padding: 230px 20px 40px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  flex-basis: 45%;
+  box-sizing: border-box;
+  z-index: 2;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 80px;
+  margin-left: 40px;
+  border: 3px solid rgb(4, 21, 70);
+}
+
+.hero h2 {
+  margin: 0;
+  font-size: 36px;
+  color: white;
+  z-index: 2;
+  color: rgb(4, 21, 70);
+  box-shadow: cyan;
+}
+.hero p {
+  font-size: 18px;
+  color: white;
+}
+
+.hero .run {
+  width: 200px;
+  padding: 10px 20px;
+  background-color: rgb(4, 21, 70);
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  border: 2px solid cyan;
+  color: white;
+  transition: 0.3s ease-in-out;
+  border-radius: 15px;
+  box-shadow: 0 0 10px cyan, 0 0 20px rgba(0, 255, 255, 0.8),
+    0 0 40px rgba(0, 255, 255, 0.6);
+  justify-self: center;
+}
+
+.hero .run:hover {
+  box-shadow: 0 0 20px cyan, 0 0 40px rgba(0, 255, 255, 1),
+    0 0 60px rgba(0, 255, 255, 0.9);
+}
+
+.next-intro {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  text-align: center; /* Ensures text alignment is centered */
+  width: 100%; /* Ensures full width */
+  margin-top: 150px;
+}
+
+.explain h2 {
+  font-size: 36px;
+  padding-top: 10px;
+}
+.explain {
+  justify-self: center;
+  justify-content: center;
+  width: 700px;
+  height: auto;
+  background-color: rgb(4, 21, 70);
+  color: white;
+  max-width: 800px;
+  width: 90%;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 70px;
+  padding: 10px 10px;
+}
+
+.key,
+.how,
+.cta,
+.meet-the-crew {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  margin-top: 20px;
+}
+.left-aligned {
+  text-align: left;
+  list-style-position: inside; /* Ensures numbers stay aligned */
+}
+.card {
+  display: flex;
+  flex-direction: column; /* Stack text inside properly */
+  justify-content: center; /* Center text vertically */
+  align-items: center; /* Center text horizontally */
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  height: auto; /* Allow cards to resize with content */
+  min-height: 120px; /* Prevent too small cards */
+  flex-basis: calc(50% - 20px); /* Keeps spacing even */
+  box-sizing: border-box;
+  text-align: center;
+  flex-wrap: wrap;
+  word-wrap: break-word; /* Ensures long words break */
+  overflow-wrap: break-word;
+}
+
+.meet-the-crew {
+  text-align: center;
+}
+
+.crew-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.person {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  width: 200px;
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+#stars {
+  position: fixed;
+  left: 0;
+  width: 100vw;
+  object-fit: cover;
+  opacity: 0.4;
+  z-index: -1;
+}
+.how {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: rgba(4, 21, 70, 0.766);
+  color: white;
+  border-radius: 10px;
+  margin: 40px 0;
+}
+
+.how h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #00ffff; /* Cyan color for the heading */
+  text-transform: uppercase;
+}
+
+.how-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.how-step {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 30px;
+  width: 250px;
+  text-align: center;
+  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.how-step:hover {
+  transform: translateY(-10px); /* Slight hover effect */
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.7); /* Glowing effect */
+}
+
+.how-step h3 {
+  font-size: 1.8rem;
+  margin: 10px 0;
+  color: #00ffff; /* Cyan for the headings */
+  text-transform: uppercase;
+}
+
+.how-step p {
+  font-size: 1.2rem;
+  color: white;
+  line-height: 1.5;
+}
+
+.cta {
+  padding: 60px 20px;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+  margin: 40px 0;
+  box-sizing: border-box;
+}
+
+.cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: rgb(4, 21, 70);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.mission {
+  display: inline-block;
+  background-color: rgb(4, 21, 70);
+  padding: 15px 40px;
+  border-radius: 25px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px cyan, 0 0 25px rgba(0, 255, 255, 0.6);
+}
+
+/* Link styles */
+.mission a {
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+  display: block;
+}
+
+.mission:hover {
+  background-color: cyan;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+  transform: translateY(-5px);
+}
+
+.mission:focus {
+  outline: none;
+  background-color: cyan;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+  transform: translateY(-5px);
+}
+
+#feedback {
+  background-color: #112240;
+  padding: 40px;
+  text-align: center;
+  border-radius: 10px;
+  width: 60%;
+  margin: 40px auto;
+  box-shadow: 0px 4px 10px rgba(0, 255, 255, 0.2);
+}
+#feedback h2 {
+  color: #64ffda;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+#feedback-form input,
+#feedback-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #64ffda;
+  background-color: #0a192f;
+  color: #ccd6f6;
+  font-size: 16px;
+}
+#feedback-form label {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  color: #64ffda;
+  margin-top: 15px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  transition: color 0.3s ease-in-out;
+}
+#feedback-form input:focus + label,
+#feedback-form textarea:focus + label {
+  color: #52e0c4;
+  text-shadow: 0px 0px 10px rgba(100, 255, 218, 0.8);
+}
+.submit-btn {
+  background-color: #64ffda;
+  color: #0a192f;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.3s;
+}
+.submit-btn:hover {
+  background-color: #52e0c4;
+  box-shadow: 0px 0px 10px rgba(100, 255, 218, 0.7);
+}
+
+@media (min-width: 900px) {
+  .next-intro {
+    flex-direction: row;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    flex-basis: 90%;
+  }
+
+  .next-intro {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero {
+    width: 100%;
+    max-width: 100%;
+    padding: 30px 10px;
+  }
+  .how-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .how-step {
+    width: 80%;
+    .cta h2 {
+      font-size: 2rem;
+    }
+
+    .button {
+      font-size: 1.2rem;
+      padding: 12px 35px;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+    }
+
+    .mission {
+      padding: 12px 35px;
+    }
+
+    .mission a {
+      font-size: 1.2rem;
+    }
+  }
+}
