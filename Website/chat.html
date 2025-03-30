@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatroom</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <link rel="shortcut icon" href="favicon-16x16.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <img id="logo" src="croppedLogoIMG.png" alt="Logo" />
+        <nav>
+            <a href="start.html">Home</a>
+            <a href="simulator.html">Control Deck</a>
+            <a href="#">Our Team</a>
+            <a href="#">Settings</a>
+        </nav>
+    </header>
+    
+    <div class="how">
+        <h2>AI Chat Room</h2>
+        
+        <!-- AI Response Display -->
+        <textarea id="ai-response" rows="10" cols="100" readonly placeholder=""></textarea>
+
+        <!-- Chat Box -->
+        <div id="chat-box">
+            <br>
+        </div>
+
+        <!-- User Input -->
+        <textarea id="chat-input" rows="3" cols="80" placeholder=""></textarea>
+        
+        <br>
+        <button onclick="sendMessage()">Send</button>
+        <button onclick="validateResponse()">Check Validity</button>
+        
+        <!-- Hidden Validation Message -->
+        <div id="validation-box" style="display: none; margin-top: 10px; padding: 10px; border: 1px solid gray; background-color: rgba(4, 21, 70,0.766)">
+            <h3>Validation Result:</h3>
+            <textarea id="validation-result" rows="3" cols="50" readonly></textarea>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            let input = document.getElementById("chat-input");
+            let message = input.value.trim();
+            
+            if (message) {
+                let chatBox = document.getElementById("chat-box");
+                let aiResponseBox = document.getElementById("ai-response");
+
+                // Display user message
+                let newMessage = document.createElement("p");
+                newMessage.innerHTML = `<strong>You:</strong> ${message}`;
+                chatBox.appendChild(newMessage);
+                
+                // Simulated AI response
+                let aiResponses = [
+                    "I understand your request.",
+                    "Can you clarify that?",
+                    "That sounds like a challenge!",
+                    "Interesting! Let me analyze further.",
+                    "Let's solve this together."
+                ];
+                let randomResponse = aiResponses[Math.floor(Math.random() * aiResponses.length)];
+                
+                aiResponseBox.value = randomResponse; // Show AI response in text area
+                
+                input.value = "";
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }
+        }
+
+        function validateResponse() {
+            let validationBox = document.getElementById("validation-box");
+            let validationText = document.getElementById("validation-result");
+
+            // Simulated validation (replace with real logic)
+            let isValid = Math.random() > 0.5;
+            let message = isValid ? "✅ Your response is valid!" : "❌ Your response is invalid!";
+            
+            validationText.value = message;
+            validationBox.style.display = "block";
+        }
+    </script>
+</body>
+</html>
+
