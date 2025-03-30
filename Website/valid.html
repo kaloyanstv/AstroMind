@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation Check</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <link rel="shortcut icon" href="favicon-16x16.png" type="image/x-icon">
+</head>
+<body>
+    <h2>Is your response valid or invalid?</h2>
+    <textarea id="validation-result" rows="5" cols="50" readonly>
+Waiting for validation...
+    </textarea>
+    
+    <script>
+        function getValidationResult() {
+            // Simulate checking user input (replace with actual logic)
+            let isValid = Math.random() > 0.5; // Randomly valid or invalid
+            let message = isValid ? "0" : "1";
+            
+            document.getElementById("validation-result").value = message;
+        }
+
+        // Run validation when the page loads
+        window.onload = getValidationResult;
+    </script>
+</body>
+</html>
+
