@@ -10,22 +10,27 @@
       href="https://fonts.googleapis.com/css?family=Audiowide"
     />
     <link rel="shortcut icon" href="favicon-16x16.png" type="image/x-icon" />
+    <style>
+      body {
+        font-family: "Audiowide";
+        font-size: 22px;
+      }
+    </style>
   </head>
+
   <body>
     <header>
       <img id="logo" src="croppedLogoIMG.png" alt="Logo" />
       <nav>
         <a href="start.html">Home</a>
         <a href="simulator.html">Control Deck</a>
-        <a href="#">Our Team</a>
-        <a href="#">Settings</a>
       </nav>
     </header>
 
     <div class="all">
       <img id="stars" src="cosmos-rawpixel-scaled.jpg" alt="Stars" />
       <div class="next-intro">
-        <div class="explain">
+        <div class="explain" id="simExplain">
           <h2>Mission Crew</h2>
           <div class="names">
             <label for="commander">Commander:</label>
@@ -79,7 +84,7 @@
         </select>
 
         <br /><br />
-        <button class="mission" onclick="submitProblem()">
+        <button class="mission" id="missionSim" onclick="submitProblem()">
           Submit Problem
         </button>
       </div>
