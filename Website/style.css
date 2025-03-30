@@ -1,6 +1,6 @@
 body {
   background-color: rgba(0, 255, 255, 0.345);
-  margin: 0; /* Remove default margin */
+  margin: 0;
   font-family: "Audiowide";
   font-size: 22px;
   color: rgb(4, 21, 70);
@@ -107,16 +107,22 @@ nav a:hover {
 .hero .run:hover {
   box-shadow: 0 0 20px cyan, 0 0 40px rgba(0, 255, 255, 1),
     0 0 60px rgba(0, 255, 255, 0.9);
+  background-color: cyan;
+}
+
+.hero .run:hover,
+.hero .run:hover * {
+  color: rgb(4, 21, 70) !important;
 }
 
 .next-intro {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column; /* Stack elements vertically */
-  align-items: center; /* Center horizontally */
-  justify-content: center; /* Center vertically */
-  text-align: center; /* Ensures text alignment is centered */
-  width: 100%; /* Ensures full width */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
   margin-top: 100px;
 }
 
@@ -135,7 +141,7 @@ nav a:hover {
   width: 90%;
   text-align: center;
   border-radius: 10px;
-  margin-top: 70px;
+  margin-top: 100px;
   padding: 10px 10px;
 }
 
@@ -156,24 +162,29 @@ nav a:hover {
 }
 .left-aligned {
   text-align: left;
-  list-style-position: inside; /* Ensures numbers stay aligned */
+  list-style-position: inside;
 }
 .card {
   display: flex;
-  flex-direction: column; /* Stack text inside properly */
-  justify-content: center; /* Center text vertically */
-  align-items: center; /* Center text horizontally */
-  background: rgba(255, 255, 255, 0.1);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
   border-radius: 10px;
-  height: auto; /* Allow cards to resize with content */
-  min-height: 120px; /* Prevent too small cards */
-  flex-basis: calc(50% - 20px); /* Keeps spacing even */
+  height: auto;
+  min-height: 120px;
+  flex-basis: calc(50% - 20px);
   box-sizing: border-box;
   text-align: center;
   flex-wrap: wrap;
-  word-wrap: break-word; /* Ensures long words break */
+  word-wrap: break-word;
   overflow-wrap: break-word;
+  background-color: rgba(203, 235, 235, 0.222);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 15px rgba(4, 21, 70, 0.766);
 }
 
 .meet-the-crew {
@@ -196,7 +207,7 @@ nav a:hover {
 }
 
 footer {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(4, 21, 70, 0.766);
   color: white;
   padding: 40px 20px;
   text-align: center;
@@ -222,7 +233,7 @@ footer {
 .how h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #00ffff; /* Cyan color for the heading */
+  color: #00ffff;
   text-transform: uppercase;
 }
 
@@ -245,14 +256,14 @@ footer {
 }
 
 .how-step:hover {
-  transform: translateY(-10px); /* Slight hover effect */
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.7); /* Glowing effect */
+  transform: translateY(-10px);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
 }
 
 .how-step h3 {
   font-size: 1.8rem;
   margin: 10px 0;
-  color: #00ffff; /* Cyan for the headings */
+  color: #00ffff;
   text-transform: uppercase;
 }
 
@@ -281,7 +292,7 @@ footer {
 
 .mission {
   display: inline-block;
-  background-color: #52e0c4;
+  background-color: rgb(4, 21, 70);
   padding: 15px 40px;
   border-radius: 25px;
   cursor: pointer;
@@ -289,6 +300,7 @@ footer {
   letter-spacing: 1px;
   transition: all 0.3s ease;
   box-shadow: 0 0 15px cyan, 0 0 25px rgba(0, 255, 255, 0.6);
+  border: 5px solid cyan;
 }
 
 /* Link styles */
@@ -312,17 +324,28 @@ footer {
   transform: translateY(-5px);
 }
 
+#missionSim {
+  background-color: cyan;
+  font-family: "Audiowide";
+  font-size: 14px;
+}
+.links {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+}
+
 #feedback {
   background-color: #112240;
   padding: 40px;
-  text-align: center;
   border-radius: 10px;
   width: 60%;
   margin: 40px auto;
   box-shadow: 0px 4px 10px rgba(0, 255, 255, 0.2);
+  border: 3px solid cyan;
 }
 #feedback h2 {
-  color: #64ffda;
+  color: cyan;
   font-size: 28px;
   margin-bottom: 20px;
 }
@@ -332,7 +355,7 @@ footer {
   padding: 12px;
   margin: 10px 0;
   border-radius: 8px;
-  border: 1px solid #64ffda;
+  border: 1px solid cyan;
   background-color: #0a192f;
   color: #ccd6f6;
   font-size: 16px;
@@ -341,7 +364,7 @@ footer {
   display: block;
   font-size: 18px;
   font-weight: bold;
-  color: #64ffda;
+  color: cyan;
   margin-top: 15px;
   text-transform: capitalize;
   letter-spacing: 1px;
@@ -349,11 +372,11 @@ footer {
 }
 #feedback-form input:focus + label,
 #feedback-form textarea:focus + label {
-  color: #52e0c4;
-  text-shadow: 0px 0px 10px rgba(100, 255, 218, 0.8);
+  color: cyan;
+  text-shadow: 0px 0px 10px rgba(0, 255, 255, 0.486);
 }
 .submit-btn {
-  background-color: #64ffda;
+  background-color: cyan;
   color: #0a192f;
   padding: 12px 20px;
   border: none;
@@ -368,7 +391,7 @@ footer {
 }
 
 #simExplain {
-  padding-bottom: 205px;
+  padding-bottom: 20px;
   margin-top: 100px;
   border: 5px solid cyan;
 }
@@ -484,57 +507,4 @@ select#common-problems {
       font-size: 1.2rem;
     }
   }
-}
-.names {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.names label {
-  font-weight: bold;
-}
-.names input {
-  padding: 5px;
-  width: 100%;
-  max-width: 300px;
-  margin: 0 auto;
-}
-
-#common-problems {
-  text-align: center;
-  background-color: #112240;
-  border: 0;
-  color: white;
-}
-#problem-description {
-  width: 100%;
-  max-width: 600px; /* Ensures it's not too wide */
-  height: 150px; /* Adjust height as needed */
-  padding: 10px;
-  border: 2px solid rgba(255, 255, 255, 0.5); /* Soft border for better visibility */
-  border-radius: 8px; /* Rounded corners */
-  background: rgba(0, 0, 0, 0.6); /* Dark translucent background */
-  color: white;
-  font-size: 16px;
-  resize: none; /* Prevents resizing */
-  outline: none;
-}
-
-#problem-description::placeholder {
-  color: rgba(255, 255, 255, 0.7); /* Makes placeholder text visible */
-}
-
-.how {
-  text-align: center;
-  padding: 20px;
-  margin-top: 165px;
-}
-
-select#common-problems {
-  padding: 8px;
-  border-radius: 5px;
-  font-size: 16px;
-}
-.start-flex {
-  display: inline-flexbox;
 }
