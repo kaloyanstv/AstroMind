@@ -5,12 +5,12 @@ from azure.identity import DefaultAzureCredential
 from flask import Flask, render_template, request, jsonify, session
 
 app = Flask(__name__)
-app.secret_key = "your_secret_key_here"  # Replace with a secure secret
+app.secret_key = "YOUR_SECRET_KEY"  # Replace with a secure secret
 
 # Initialize the Azure AI Project client.
 project_client = AIProjectClient.from_connection_string(
     credential=DefaultAzureCredential(),
-    conn_str="eastus2.api.azureml.ms;d1ca9675-944b-4a77-b674-f4180d8122ef;agentsdk;project-demo-xnpv",
+    conn_str="YOUR_PROJECT_STRING",
 )
 thread = project_client.agents.create_thread()
 
@@ -45,7 +45,7 @@ def genprofiles():
         profile_prompt += f"{role.capitalize()}: {name}\n"
     
     # Call ProfileAI.
-    profile_agent = project_client.agents.get_agent("asst_IWOREmGaT0lkuj9nOI90rYc6")
+    profile_agent = project_client.agents.get_agent("YOUR_AGENT_ID(BEST_FROM_OS_VARS)")
     profile_thread = project_client.agents.create_thread()
     project_client.agents.create_message(
         thread_id=profile_thread.id, role="user", content=profile_prompt
@@ -73,7 +73,7 @@ def genprofiles():
     )
     
     # Call ProblemAI.
-    problem_agent = project_client.agents.get_agent("asst_bSX6frsDeNLnI5Kpdi7KdrIS")
+    problem_agent = project_client.agents.get_agent("YOUR_AGENT_ID(BEST_FROM_OS_VARS)")
     project_client.agents.create_message(
         thread_id=thread.id, role="user", content=problem_prompt
     )
@@ -96,7 +96,7 @@ def genprofiles():
 def answer():
     user_input = request.form.get("solution_input")
     # Send the solution message to ProblemAI.
-    problem_agent = project_client.agents.get_agent("asst_bSX6frsDeNLnI5Kpdi7KdrIS")
+    problem_agent = project_client.agents.get_agent("YOUR_AGENT_ID(BEST_FROM_OS_VARS)")
     project_client.agents.create_message(
         thread_id=thread.id, role="user", content=user_input
     )
@@ -122,7 +122,7 @@ def validate_solution():
         "Do not suggest any new actions; simply analyze whether the solution addresses the failure adequately and explain why or why not.\n\n"
         f"Solution: {solution}"
     )
-    god_agent = project_client.agents.get_agent("asst_RTmTW56uvhXgyBYeGW7cltW8")
+    god_agent = project_client.agents.get_agent("YOUR_AGENT_ID(BEST_FROM_OS_VARS)")
     project_client.agents.create_message(
         thread_id=thread.id, role="user", content=god_prompt
     )
