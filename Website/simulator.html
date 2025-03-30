@@ -1,97 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simulation</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
-    <link rel="shortcut icon" href="favicon-16x16.png" type="image/x-icon">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Audiowide"
+    />
+    <link rel="shortcut icon" href="favicon-16x16.png" type="image/x-icon" />
+  </head>
+  <body>
     <header>
-        <img id="logo" src="croppedLogoIMG.png" alt="Logo" />
-        <nav>
-            <a href="start.html">Home</a>
-            <a href="simulator.html">Control Deck</a>
-            <a href="#">Our Team</a>
-            <a href="#">Settings</a>
-        </nav>
+      <img id="logo" src="croppedLogoIMG.png" alt="Logo" />
+      <nav>
+        <a href="start.html">Home</a>
+        <a href="simulator.html">Control Deck</a>
+        <a href="#">Our Team</a>
+        <a href="#">Settings</a>
+      </nav>
     </header>
 
     <div class="all">
-        <img id="stars" src="cosmos-rawpixel-scaled.jpg" alt="Stars" />
-        <div class="next-intro">
-            <div class="explain">
-                <h2>Mission Crew</h2>
-                <div class="names">
-                    <label for="commander">Commander:</label>
-                    <input type="text" id="commander">
-                    
-                    <label for="engineer">Engineer:</label>
-                    <input type="text" id="engineer">
-                    
-                    <label for="science">Science:</label>
-                    <input type="text" id="science">
-                    
-                    <label for="pilot">Pilot:</label>
-                    <input type="text" id="pilot">
-                    
-                    <label for="medic">Medic:</label>
-                    <input type="text" id="medic">
-                </div>
-            </div>
+      <img id="stars" src="cosmos-rawpixel-scaled.jpg" alt="Stars" />
+      <div class="next-intro">
+        <div class="explain">
+          <h2>Mission Crew</h2>
+          <div class="names">
+            <label for="commander">Commander:</label>
+            <input type="text" id="commander" />
+
+            <label for="engineer">Engineer:</label>
+            <input type="text" id="engineer" />
+
+            <label for="science">Science:</label>
+            <input type="text" id="science" />
+
+            <label for="pilot">Pilot:</label>
+            <input type="text" id="pilot" />
+
+            <label for="medic">Medic:</label>
+            <input type="text" id="medic" />
+          </div>
         </div>
-        
-        <div class="how">
-            <h2>Enter Mission Problem</h2>
-            <p>Describe the problem your crew is facing:</p>
-            <textarea id="problem-description" rows="5" cols="50" placeholder="Type the problem here..."></textarea>
-            
-            <h2>Select a Common Issue</h2>
-            <p>Choose from the most frequent problems encountered:</p>
-            <select id="common-problems">
-                <option value="">-- Select a Problem --</option>
-                <option value="oxygen-leak">Communication Blackout</option>
-                <option value="engine-failure">Oxygen Level Fluctuation</option>
-                <option value="navigation-error">Power System Failure</option>
-                <option value="power-outage">Gyroscope Malfunction</option>
-                <option value="communication-failure">Propulsion System Anomaly</option>
-                <option value="">-- Human/Behavioral Issues --</option>
-                <option value="oxygen-leak">Crew Fatigue</option>
-                <option value="engine-failure">Interpersonal Conflict</option>
-                <option value="navigation-error">Isolation-Induced Depression</option>
-                <option value="power-outage">Panic Attack / Anxiety Episode</option>
-                <option value="">-- Mission & Scientific Challenges --</option>
-                <option value="engine-failure">Experiment Contamination</option>
-                <option value="navigation-error">Loss of Tool During EVA</option>
-                <option value="power-outage">Unexpected Data Anomalies</option>
-            </select>
-            
-            <br><br>
-            <button class="mission" onclick="submitProblem()">Submit Problem</button>
-        </div>
+      </div>
+
+      <div class="how">
+        <h2>Enter Mission Problem</h2>
+        <p>Describe the problem your crew is facing:</p>
+        <textarea
+          id="problem-description"
+          rows="5"
+          cols="50"
+          placeholder="Type the problem here..."
+        ></textarea>
+
+        <h2>Select a Common Issue</h2>
+        <p>Choose from the most frequent problems encountered:</p>
+        <select id="common-problems">
+          <option value="">-- Select a Problem --</option>
+          <option value="oxygen-leak">Communication Blackout</option>
+          <option value="engine-failure">Oxygen Level Fluctuation</option>
+          <option value="navigation-error">Power System Failure</option>
+          <option value="power-outage">Gyroscope Malfunction</option>
+          <option value="communication-failure">
+            Propulsion System Anomaly
+          </option>
+          <option value="">-- Human/Behavioral Issues --</option>
+          <option value="oxygen-leak">Crew Fatigue</option>
+          <option value="engine-failure">Interpersonal Conflict</option>
+          <option value="navigation-error">Isolation-Induced Depression</option>
+          <option value="power-outage">Panic Attack / Anxiety Episode</option>
+          <option value="">-- Mission & Scientific Challenges --</option>
+          <option value="engine-failure">Experiment Contamination</option>
+          <option value="navigation-error">Loss of Tool During EVA</option>
+          <option value="power-outage">Unexpected Data Anomalies</option>
+        </select>
+
+        <br /><br />
+        <button class="mission" onclick="submitProblem()">
+          Submit Problem
+        </button>
+      </div>
     </div>
 
     <script>
-        function submitProblem() {
-            let commander = document.getElementById("commander").value;
-            let engineer = document.getElementById("engineer").value;
-            let science = document.getElementById("science").value;
-            let pilot = document.getElementById("pilot").value;
-            let medic = document.getElementById("medic").value;
-            let problemDesc = document.getElementById("problem-description").value;
-            let commonProblem = document.getElementById("common-problems").value;
+      function submitProblem() {
+        let commander = document.getElementById("commander").value;
+        let engineer = document.getElementById("engineer").value;
+        let science = document.getElementById("science").value;
+        let pilot = document.getElementById("pilot").value;
+        let medic = document.getElementById("medic").value;
+        let problemDesc = document.getElementById("problem-description").value;
+        let commonProblem = document.getElementById("common-problems").value;
 
-            if (!problemDesc && !commonProblem) {
-                alert("Please enter a problem description or select a common problem.");
-                return;
-            }
-
-            let problemData = { commander, engineer, science, pilot, medic, problemDesc, commonProblem };
-            console.log("Submitted Data:", problemData);
-            alert("Problem submitted successfully!");
+        if (!problemDesc && !commonProblem) {
+          alert(
+            "Please enter a problem description or select a common problem."
+          );
+          return;
         }
+
+        let problemData = {
+          commander,
+          engineer,
+          science,
+          pilot,
+          medic,
+          problemDesc,
+          commonProblem,
+        };
+        console.log("Submitted Data:", problemData);
+        alert("Problem submitted successfully!");
+      }
     </script>
-</body>
+  </body>
 </html>
