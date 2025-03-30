@@ -107,6 +107,12 @@ nav a:hover {
 .hero .run:hover {
   box-shadow: 0 0 20px cyan, 0 0 40px rgba(0, 255, 255, 1),
     0 0 60px rgba(0, 255, 255, 0.9);
+  background-color: cyan;
+}
+
+.hero .run:hover,
+.hero .run:hover * {
+  color: rgb(4, 21, 70) !important;
 }
 
 .next-intro {
@@ -135,7 +141,7 @@ nav a:hover {
   width: 90%;
   text-align: center;
   border-radius: 10px;
-  margin-top: 70px;
+  margin-top: 100px;
   padding: 10px 10px;
 }
 
@@ -173,6 +179,12 @@ nav a:hover {
   flex-wrap: wrap;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  background-color: rgba(203, 235, 235, 0.222);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 15px rgba(4, 21, 70, 0.766);
 }
 
 .meet-the-crew {
@@ -384,6 +396,9 @@ footer {
   border: 5px solid cyan;
 }
 
+#common-problems:hover {
+  box-shadow: 0px 0px 30px rgba(0, 255, 255, 0.507);
+}
 .names {
   display: flex;
   flex-direction: column;
