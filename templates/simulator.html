@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide" />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='styles/favicon-16x16.png') }}" type="image/x-icon" />
+    <style>
+      /* Global Styles */
+      body {
+        font-family: "Audiowide";
+        font-size: 22px;
+        margin: 0;
+        color: rgb(4, 21, 70);
+        background-color: rgba(0, 255, 255, 0.345);
+      }
+      /* Header / Navbar */
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        background: rgb(6, 7, 61);
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 10px 20px;
+        z-index: 100;
+      }
+      header img#logo {
+        width: 150px;
+        filter: drop-shadow(0px 1px 20px rgba(255,255,255,1))
+                drop-shadow(0px 1px 40px rgba(255,255,255,0.9))
+                drop-shadow(0px 1px 60px rgba(255,255,255,0.8));
+      }
+      nav {
+        display: flex;
+        gap: 15px;
+      }
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.2rem;
+        transition: color 0.3s ease-in-out;
+      }
+      nav a:hover {
+        color: cyan;
+        text-shadow: 0px 0px 10px cyan;
+      }
+      /* Outer Container */
+      .all {
+        position: relative;
+        margin-top: 70px; /* leave space for header */
+      }
+      #stars {
+        width: 100%;
+        object-fit: cover;
+        opacity: 0.8;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: -1;
+      }
+      /* Beautiful Frontend Section */
+      .next-intro {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 20px;
+      }
+      .explain {
+        background: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        border-radius: 10px;
+        color: white;
+        width: 100%;
+        max-width: 800px;
+      }
+      .names label {
+        display: block;
+        margin-top: 10px;
+      }
+      .names input {
+        display: block;
+        margin-bottom: 10px;
+        padding: 5px;
+        font-size: 20px;
+        width: 100%;
+      }
+      /* How Section for problem common issue */
+      .how {
+        text-align: center;
+        margin: 20px auto;
+        background: rgba(255,255,255,0.8);
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 800px;
+      }
+      .how select {
+        padding: 10px;
+        font-size: 18px;
+        margin-bottom: 20px;
+        width: 80%;
+      }
+      .mission {
+        background-color: rgb(4, 21, 70);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 20px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .mission:hover {
+        background-color: cyan;
+      }
+      /* Simulator Backend Sections */
+      /* Hidden by default */
+      .hidden {
+        display: none;
+      }
+      #conversation-section,
+      #solution-section {
+        background: rgba(255,255,255,0.1);
+        padding: 20px;
+        margin: 20px auto;
+        border-radius: 10px;
+        max-width: 800px;
+      }
+      #conversation {
+        border: 1px solid #ccc;
+        padding: 10px;
+        height: 250px;
+        overflow-y: scroll;
+        white-space: pre-wrap;
+        background: #f9f9f9;
+        border-radius: 5px;
+        margin-top: 20px;
+      }
+      #solution-section input[type="text"] {
+        width: 80%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 18px;
+        margin-right: 10px;
+      }
+      /* Footer */
+      footer {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+      }
+      footer p.footer-note {
+        margin-top: 20px;
+      }
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .names input {
+          font-size: 16px;
+        }
+        #solution-section input[type="text"] {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header / Navbar -->
+    <header>
+      <a id="logoLink" href="/home">
+        <img id="logo" src="{{ url_for('static', filename='styles/croppedLogoIMG.png') }}" alt="Logo" />
+      </a>
+      <nav>
+        <a href="/home">Home</a>
+        <a href="/simulator">Control Deck</a>
+      </nav>
+    </header>
+
+    <div class="all">
+      <img id="stars" src="{{ url_for('static', filename='styles/cosmos-rawpixel-scaled.jpg') }}" alt="Stars" />
+
+      <!-- Single Form for Everything -->
+      <form id="sim-form">
+        <!-- Beautiful Frontend Input Section -->
+        <div class="next-intro">
+          <div class="explain">
+            <h2>Mission Crew</h2>
+            <div class="names">
+              <label for="commander">Commander:</label>
+              <input type="text" id="commander" name="commander" />
+
+              <label for="engineer">Engineer:</label>
+              <input type="text" id="engineer" name="engineer" />
+
+              <label for="science">Science:</label>
+              <input type="text" id="science" name="science" />
+
+              <label for="pilot">Pilot:</label>
+              <input type="text" id="pilot" name="pilot" />
+
+              <label for="medic">Medic:</label>
+              <input type="text" id="medic" name="medic" />
+            </div>
+          </div>
+        </div>
+
+        <div class="how">
+          <h2>Enter Mission Problem or Select Common Issue</h2>
+          <!-- Instead of a text area, we only use a dropdown in this example -->
+          <select id="common-problems" name="common-problems">
+            <option value="">-- Select a Problem --</option>
+            <option value="Communication Blackout – Temporary loss of contact with Mission Control.">Communication Blackout</option>
+            <option value="Oxygen Level Fluctuation – Oxygen levels outside nominal range; possible leak or system fault.">Oxygen Level Fluctuation</option>
+            <option value="Power System Failure – Batteries or solar arrays not delivering enough power.">Power System Failure</option>
+            <option value="Gyroscope Malfunction – Loss of orientation stability; attitude control affected.">Gyroscope Malfunction</option>
+            <option value="Propulsion System Anomaly – Thrusters misfiring or failing to respond.">Propulsion System Anomaly</option>
+            <option value="Crew Fatigue – Reduced focus and cognitive function from poor sleep or overwork.">Crew Fatigue</option>
+            <option value="Interpersonal Conflict – Tension or disagreement between two or more crew members.">Interpersonal Conflict</option>
+            <option value="Isolation-Induced Depression – A crew member shows signs of emotional withdrawal.">Isolation-Induced Depression</option>
+            <option value="Panic Attack / Anxiety Episode – One astronaut has a psychological breakdown or panic moment.">Panic Attack / Anxiety Episode</option>
+            <option value="Experiment Contamination – Scientific samples or results compromised due to procedural lapse.">Experiment Contamination</option>
+            <option value="Loss of Tool During EVA – A piece of equipment or tool is lost outside the spacecraft.">Loss of Tool During EVA</option>
+            <option value="Unexpected Data Anomalies – Scientific instruments provide erratic or corrupted data.">Unexpected Data Anomalies</option>
+          </select>
+          <br /><br />
+          <!-- This button triggers the backend submission -->
+          <button type="button" class="mission" id="submitProblemBtn">Submit Problem</button>
+        </div>
+
+        <!-- Hidden fields for backend submission -->
+        <input type="hidden" id="hidden_commander" name="name_commander" />
+        <input type="hidden" id="hidden_engineer" name="name_engineer" />
+        <input type="hidden" id="hidden_scientist" name="name_scientist" />
+        <input type="hidden" id="hidden_pilot" name="name_pilot" />
+        <input type="hidden" id="hidden_medic" name="name_medic" />
+        <!-- We use the common-problems value as the incident -->
+        <input type="hidden" id="incident" name="incident" />
+
+        <!-- Conversation Section (hidden until a response is received) -->
+        <div id="conversation-section" class="hidden">
+          <h2>Team Conversation</h2>
+          <div id="conversation"></div>
+        </div>
+
+        <!-- Proposed Solution Section (hidden until a response is received) -->
+        <div id="solution-section" class="hidden">
+          <h2>Propose a Solution</h2>
+          <input type="text" id="solution_input" name="solution_input" placeholder="Enter your solution" required>
+          <br />
+          <button type="button" id="send_to_chat">Send to Chat</button>
+          <button type="button" id="validate_solution">Validate Solution</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p class="footer-note">&copy; 2025 AstroMind.</p>
+    </footer>
+
+    <!-- JavaScript for Backend Connectivity -->
+    <script>
+      // When the user clicks "Submit Problem"
+      document.getElementById("submitProblemBtn").addEventListener("click", function() {
+        // Pre-fill hidden fields from the visible inputs
+        document.getElementById("hidden_commander").value = document.getElementById("commander").value;
+        document.getElementById("hidden_engineer").value = document.getElementById("engineer").value;
+        document.getElementById("hidden_scientist").value = document.getElementById("science").value;
+        document.getElementById("hidden_pilot").value = document.getElementById("pilot").value;
+        document.getElementById("hidden_medic").value = document.getElementById("medic").value;
+        // Use the selected common problem as the incident.
+        let commonProb = document.getElementById("common-problems").value;
+        if (!commonProb) {
+          alert("Please select a common problem.");
+          return;
+        }
+        document.getElementById("incident").value = commonProb;
+  
+        // Create a FormData object from the entire form
+        const formData = new FormData(document.getElementById("sim-form"));
+  
+        // Send data to the /genprofiles endpoint
+        fetch("/genprofiles", {
+          method: "POST",
+          body: formData
+        })
+          .then(response => response.json())
+          .then(data => {
+            // Show the conversation and solution sections
+            document.getElementById("conversation-section").classList.remove("hidden");
+            document.getElementById("solution-section").classList.remove("hidden");
+            document.getElementById("conversation").textContent = data.conversation;
+          })
+          .catch(err => console.error(err));
+      });
+  
+      // Handle "Send to Chat" button
+      document.getElementById("send_to_chat").addEventListener("click", function(e) {
+        e.preventDefault();
+        const formData = new FormData(document.getElementById("sim-form"));
+        fetch("/answer", {
+          method: "POST",
+          body: formData
+        })
+          .then(response => response.json())
+          .then(data => {
+            const conversationDiv = document.getElementById("conversation");
+            conversationDiv.textContent += "\n" + data.conversation;
+            document.getElementById("solution_input").value = "";
+          })
+          .catch(err => console.error(err));
+      });
+  
+      // Handle "Validate Solution" button
+      document.getElementById("validate_solution").addEventListener("click", function(e) {
+        e.preventDefault();
+        const formData = new FormData(document.getElementById("sim-form"));
+        fetch("/validate_solution", {
+          method: "POST",
+          body: formData
+        })
+          .then(response => response.json())
+          .then(data => {
+            alert("GodAI feedback:\n" + data.validation);
+          })
+          .catch(err => console.error(err));
+      });
+    </script>
+  </body>
+</html>

@@ -59,21 +59,19 @@ nav a:hover {
 }
 
 .hero {
-  padding: 230px 20px 40px;
+  padding: 230px 10px 20  px;
   text-align: center;
   position: relative;
   z-index: 1;
   background: rgba(255, 255, 255, 0.1);
-  padding: 20px;
+  padding: 10px;
   border-radius: 10px;
   flex-basis: 45%;
   box-sizing: border-box;
   z-index: 2;
   max-width: 600px;
   width: 100%;
-  margin: 0 auto;
-  margin-top: 80px;
-  margin-left: 40px;
+  margin: 0;
   border: 3px solid rgb(4, 21, 70);
 }
 
@@ -103,7 +101,7 @@ nav a:hover {
   border-radius: 15px;
   box-shadow: 0 0 10px cyan, 0 0 20px rgba(0, 255, 255, 0.8),
     0 0 40px rgba(0, 255, 255, 0.6);
-  justify-self: center;
+    justify-self: center;
 }
 
 .hero .run:hover {
@@ -119,7 +117,7 @@ nav a:hover {
   justify-content: center; /* Center vertically */
   text-align: center; /* Ensures text alignment is centered */
   width: 100%; /* Ensures full width */
-  margin-top: 150px;
+  margin-top: 100px;
 }
 
 .explain h2 {
@@ -133,12 +131,12 @@ nav a:hover {
   height: auto;
   background-color: rgb(4, 21, 70);
   color: white;
-  max-width: 800px;
+  max-width: 700px;
   width: 90%;
   text-align: center;
   border-radius: 10px;
   margin-top: 70px;
-  padding: 10px 10px;
+  padding: 10px 10px; 
 }
 
 .key,
@@ -283,7 +281,7 @@ footer {
 
 .mission {
   display: inline-block;
-  background-color: rgb(4, 21, 70);
+  background-color:#52e0c4  ;
   padding: 15px 40px;
   border-radius: 25px;
   cursor: pointer;
@@ -387,15 +385,15 @@ footer {
   }
 
   .next-intro {
-    flex-direction: column;
-    align-items: center;
-  }
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1); 
+    border-radius: 10px;
+    text-align: center; 
+}
 
-  .hero {
-    width: 100%;
-    max-width: 100%;
-    padding: 30px 10px;
-  }
+
   .how-container {
     flex-direction: column;
     align-items: center;
@@ -425,4 +423,57 @@ footer {
       font-size: 1.2rem;
     }
   }
+}
+.names {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.names label {
+  font-weight: bold;
+}
+.names input {
+  padding: 5px;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+#common-problems{
+  text-align: center;
+  background-color:#112240;
+  border: 0;
+  color: white;
+}
+#problem-description {
+  width: 100%;
+  max-width: 600px;  /* Ensures it's not too wide */
+  height: 150px;  /* Adjust height as needed */
+  padding: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.5); /* Soft border for better visibility */
+  border-radius: 8px;  /* Rounded corners */
+  background: rgba(0, 0, 0, 0.6); /* Dark translucent background */
+  color: white;
+  font-size: 16px;
+  resize: none; /* Prevents resizing */
+  outline: none;
+}
+
+#problem-description::placeholder {
+  color: rgba(255, 255, 255, 0.7); /* Makes placeholder text visible */
+}
+
+.how {
+  text-align: center;
+  padding: 20px;
+  margin-top: 165px;
+}
+
+select#common-problems {
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.start-flex{
+ display: inline-flexbox;
 }

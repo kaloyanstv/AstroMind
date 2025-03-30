@@ -20,6 +20,9 @@ def home():
 @app.route('/home')
 def generic():
     return render_template('start.html')
+@app.route('/simulator')
+def simulator():
+    return render_template('simulator.html')
 
 @app.route("/genprofiles", methods=["POST"])
 def genprofiles():
