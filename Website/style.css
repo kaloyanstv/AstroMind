@@ -508,3 +508,18 @@ select#common-problems {
     }
   }
 }
+.aibutton{
+  width: 200px;
+  padding: 10px 20px;
+  background-color: rgb(4, 21, 70);
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  border: 2px solid cyan;
+  color: white;
+  transition: 0.3s ease-in-out;
+  border-radius: 15px;
+  box-shadow: 0 0 10px cyan, 0 0 20px rgba(0, 255, 255, 0.8),
+    0 0 40px rgba(0, 255, 255, 0.6);
+    justify-self: center;
+}
