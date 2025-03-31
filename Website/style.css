@@ -1,0 +1,525 @@
+body {
+  background-color: rgba(0, 255, 255, 0.345);
+  margin: 0;
+  font-family: "Audiowide";
+  font-size: 22px;
+  color: rgb(4, 21, 70);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  text-align: right;
+  background: rgb(6, 7, 61);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  z-index: 100;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+nav {
+  margin-left: auto;
+  margin-top: 10px;
+  display: flex;
+  padding-right: 15px;
+}
+
+#logo {
+  width: 150px;
+  height: auto;
+  background-color: none;
+  align-items: self-start;
+  margin-top: 0;
+  justify-content: flex-start;
+  filter: drop-shadow(0px 1px 20px rgba(255, 255, 255, 1))
+    drop-shadow(0px 1px 40px rgba(255, 255, 255, 0.9))
+    drop-shadow(0px 1px 60px rgba(255, 255, 255, 0.8));
+  padding-left: 50px;
+}
+
+nav a {
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.2rem;
+  transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+  color: cyan;
+  text-shadow: 0px 0px 10px cyan;
+}
+
+.hero {
+  padding: 230px 10px 20 px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 10px;
+  flex-basis: 45%;
+  box-sizing: border-box;
+  z-index: 2;
+  max-width: 600px;
+  width: 100%;
+  margin: 0;
+  border: 3px solid rgb(4, 21, 70);
+}
+
+.hero h2 {
+  margin: 0;
+  font-size: 36px;
+  color: white;
+  z-index: 2;
+  color: rgb(4, 21, 70);
+  box-shadow: cyan;
+}
+.hero p {
+  font-size: 18px;
+  color: white;
+}
+
+.hero .run {
+  width: 200px;
+  padding: 10px 20px;
+  background-color: rgb(4, 21, 70);
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  border: 2px solid cyan;
+  color: white;
+  transition: 0.3s ease-in-out;
+  border-radius: 15px;
+  box-shadow: 0 0 10px cyan, 0 0 20px rgba(0, 255, 255, 0.8),
+    0 0 40px rgba(0, 255, 255, 0.6);
+  justify-self: center;
+}
+
+.hero .run:hover {
+  box-shadow: 0 0 20px cyan, 0 0 40px rgba(0, 255, 255, 1),
+    0 0 60px rgba(0, 255, 255, 0.9);
+  background-color: cyan;
+}
+
+.hero .run:hover,
+.hero .run:hover * {
+  color: rgb(4, 21, 70) !important;
+}
+
+.next-intro {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.explain h2 {
+  font-size: 36px;
+  padding-top: 10px;
+}
+.explain {
+  justify-self: center;
+  justify-content: center;
+  width: 700px;
+  height: auto;
+  background-color: rgb(4, 21, 70);
+  color: white;
+  max-width: 700px;
+  width: 90%;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 100px;
+  padding: 10px 10px;
+}
+
+.key,
+.how,
+.cta,
+.meet-the-crew {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  margin-top: 20px;
+}
+.left-aligned {
+  text-align: left;
+  list-style-position: inside;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  height: auto;
+  min-height: 120px;
+  flex-basis: calc(50% - 20px);
+  box-sizing: border-box;
+  text-align: center;
+  flex-wrap: wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  background-color: rgba(203, 235, 235, 0.222);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 15px rgba(4, 21, 70, 0.766);
+}
+
+.meet-the-crew {
+  text-align: center;
+}
+
+.crew-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.person {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  width: 200px;
+}
+
+footer {
+  background-color: rgba(4, 21, 70, 0.766);
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+#stars {
+  position: fixed;
+  left: 0;
+  width: 100vw;
+  object-fit: cover;
+  opacity: 0.4;
+  z-index: -1;
+}
+.how {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: rgba(4, 21, 70, 0.766);
+  color: white;
+  border-radius: 10px;
+  margin: 40px 0;
+}
+
+.how h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #00ffff;
+  text-transform: uppercase;
+}
+
+.how-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.how-step {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 30px;
+  width: 250px;
+  text-align: center;
+  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.how-step:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+}
+
+.how-step h3 {
+  font-size: 1.8rem;
+  margin: 10px 0;
+  color: #00ffff;
+  text-transform: uppercase;
+}
+
+.how-step p {
+  font-size: 1.2rem;
+  color: white;
+  line-height: 1.5;
+}
+
+.cta {
+  padding: 60px 20px;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+  margin: 40px 0;
+  box-sizing: border-box;
+}
+
+.cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: rgb(4, 21, 70);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.mission {
+  display: inline-block;
+  background-color: rgb(4, 21, 70);
+  padding: 15px 40px;
+  border-radius: 25px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px cyan, 0 0 25px rgba(0, 255, 255, 0.6);
+  border: 5px solid cyan;
+}
+
+/* Link styles */
+.mission a {
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+  display: block;
+}
+
+.mission:hover {
+  background-color: cyan;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+  transform: translateY(-5px);
+}
+
+.mission:focus {
+  outline: none;
+  background-color: cyan;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+  transform: translateY(-5px);
+}
+
+#missionSim {
+  background-color: cyan;
+  font-family: "Audiowide";
+  font-size: 14px;
+}
+.links {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+}
+
+#feedback {
+  background-color: #112240;
+  padding: 40px;
+  border-radius: 10px;
+  width: 60%;
+  margin: 40px auto;
+  box-shadow: 0px 4px 10px rgba(0, 255, 255, 0.2);
+  border: 3px solid cyan;
+}
+#feedback h2 {
+  color: cyan;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+#feedback-form input,
+#feedback-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid cyan;
+  background-color: #0a192f;
+  color: #ccd6f6;
+  font-size: 16px;
+}
+#feedback-form label {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  color: cyan;
+  margin-top: 15px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  transition: color 0.3s ease-in-out;
+}
+#feedback-form input:focus + label,
+#feedback-form textarea:focus + label {
+  color: cyan;
+  text-shadow: 0px 0px 10px rgba(0, 255, 255, 0.486);
+}
+.submit-btn {
+  background-color: cyan;
+  color: #0a192f;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.3s;
+}
+.submit-btn:hover {
+  background-color: #52e0c4;
+  box-shadow: 0px 0px 10px rgba(100, 255, 218, 0.7);
+}
+
+#simExplain {
+  padding-bottom: 20px;
+  margin-top: 100px;
+  border: 5px solid cyan;
+}
+
+#common-problems:hover {
+  box-shadow: 0px 0px 30px rgba(0, 255, 255, 0.507);
+}
+.names {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.names label {
+  font-weight: bold;
+}
+.names input {
+  padding: 5px;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+#common-problems {
+  text-align: center;
+  background-color: #112240;
+  border: 0;
+  color: white;
+}
+#problem-description {
+  width: 100%;
+  max-width: 600px;
+  height: 150px;
+  padding: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 16px;
+  resize: none; /* Prevents resizing */
+  outline: none;
+}
+
+#problem-description::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.how {
+  text-align: center;
+  padding: 20px;
+}
+
+select#common-problems {
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.start-flex {
+  display: inline-flexbox;
+}
+
+@media (min-width: 900px) {
+  .next-intro {
+    flex-direction: row;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    flex-basis: 90%;
+  }
+
+  .next-intro {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .how-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .how-step {
+    width: 80%;
+    .cta h2 {
+      font-size: 2rem;
+    }
+
+    .button {
+      font-size: 1.2rem;
+      padding: 12px 35px;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+    }
+
+    .mission {
+      padding: 12px 35px;
+    }
+
+    .mission a {
+      font-size: 1.2rem;
+    }
+  }
+}
+.aibutton{
+  width: 200px;
+  padding: 10px 20px;
+  background-color: rgb(4, 21, 70);
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  border: 2px solid cyan;
+  color: white;
+  transition: 0.3s ease-in-out;
+  border-radius: 15px;
+  box-shadow: 0 0 10px cyan, 0 0 20px rgba(0, 255, 255, 0.8),
+    0 0 40px rgba(0, 255, 255, 0.6);
+    justify-self: center;
+}

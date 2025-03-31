@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Audiowide"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="favicon-16x16.png" type="image/x-icon">
+    <style>
+      body {
+        font-family: "Audiowide";
+        font-size: 22px;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <header>
+      <a  id="logoLink" href="#"><img id="logo" src="croppedLogoIMG.png" alt="Logo" />
+      <nav>
+        <a href="#">Home</a>
+        <a href="simulator.html">Control Deck</a>
+      </nav>
+    </header>
+    <div class="all">
+      <img id="stars" src="cosmos-rawpixel-scaled.jpg" alt="Stars" />
+      <div class="next-intro">
+      <div class="start-flex">
+        <div class="hero">
+          <h2>Explore the Cosmos with AstroMind</h2>
+          <p>An advanced space simulation experience driven by AI.</p>
+          <div class="run"><a href="simulator.html">Run Simulation</a> </div> 
+        </div>
+      </div>
+      <div class="explain">
+        <h2>What is AstroMind?</h2>
+        <div class="answer">
+          <p>AstroMind is an AI-driven space psychology simulator where you step into Mission Control and navigate the unseen challenges of deep space. Astronauts aren’t just explorers—they're humans with unique behaviors, emotions, and reactions. Your mission? Analyze crew dynamics, solve unpredictable crises, and make critical decisions that could mean survival or failure.
+  
+            Blending AI, psychology, and space exploration, AstroMind reveals what’s usually invisible, turning the unknown into insight. Are you ready to think like an astronaut, decide like a leader, and explore beyond the stars?</p>
+        </div>
+      </div>
+    </div>
+      <!--I recommend putting a little bit of a margin/padding on the left or right for the text so that it isnt as stretched-->
+    <div class="key">
+      <h2>Key Features</h2>
+      <div class="features">
+        <div class="card">
+          <h3> &#128640; Realistic Space Simulations</h3>
+        </div>
+        <div class="card">
+          <h3> 	&#129302; AI-Powered Crew Interactions</h3>
+        </div>
+        <div class="card">
+          <h3>&#129504; Decision Feedback System</h3>
+        </div>
+        <div class="card">
+          <h3> &#127756; Immersive Space Experience</h3>
+        </div>
+      </div>
+      <!-- Here idk what else to put as text, for all of the info you can put it in a window like box and make them interactive if you feel like it-->
+    </div>
+    <section class="how">
+      <h2>How It Works</h2>
+      <div class="how-container">
+        <div class="how-step">
+          <h3>Pick a Scenario</h3>
+          <p>Choose a space mission challenge to face. 
+            Select a pre-made scenario to save time and improve your experience.  </p>
+        </div>
+        <div class="how-step">
+          <h3>Analyze the Crew’s Reactions</h3>
+          <p>AI generates astronaut behavioral responses.</p>
+        </div>
+        <div class="how-step">
+          <h3>Decide & Get Feedback</h3>
+          <p>Make a choice, see if it leads to mission success and gain new knowledge using our project.</p>
+        </div>
+      </div>
+    </section>
+    <section class="cta">
+      <h2>Ready to Begin Your Space Journey?</h2>
+      <div class="mission"><a href="simulator.html">Start your mission now</a></div>   
+    </section>
+      <section class="meet-the-crew">
+        <h2>Meet the Crew</h2>        
+        <p>Get to know the team behind the project.</p>
+        <div class="crew-grid">
+          <div class="person">
+            <h3>Arti</h3>
+            <p>Marketing Strategist</p>
+          </div>          
+          <div class="person">
+            <h3>Kaloyan Stoychev</h3>
+            <p>Backend Developer</p>
+          </div>
+          <div class="person">
+            <h3>Nikita Chernevskiy</h3>
+            <p>AI Engineer</p>
+          </div>
+          <div class="person">
+            <h3>Niya Gyokova</h3>
+            <p>Frontend Developer</p>
+          </div>
+          <div class="person">
+            <h3>Sofokli ...</h3>
+            <p>business Analyst</p>
+          </div>
+        </div>
+      </section>
+    <!--we can do it like this where we have a 3x2 box without one of the boxes at the end going from top to bottom,or backwards if you want to change the way its designed-->
+    <footer id="contact">
+      <div class="footer-container">
+        <div class="contact-info">
+          <h3>Contact Us</h3>
+        </div>
+        <section id="feedback">
+          <h2>Send Us Your Feedback</h2>
+          <form id="feedback-form" action="https://formspree.io/f/mnnpbbqz" method="POST">
+              <label for="name" style="text-align: left;">Your Name:</label>
+              <input type="text" id="name" name="name" placeholder="Enter your name" required>
+          
+              <label for="email" style="text-align: left;">Your Email:</label>
+              <input type="email" id="email" name="email" placeholder="Enter your email" required>
+          
+              <label for="message" style="text-align: left;">Your Feedback:</label>
+              <textarea id="message" name="message" placeholder="Write your thoughts here..." rows="5" required></textarea>
+          
+              <button type="submit" class="submit-btn">Submit</button>
+          </form>            
+      </section>
+        <div class="social-media">
+          <h3 style="font-size: 26px;">Follow Us</h3> 
+          <div class="links">       
+          <a href="https://www.instagram.com/astrominds7?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img src="instagram.png" alt="Instagram" style="width: 50px;" /></a>
+          <a href="https://x.com/LisartMell95607"><img src="X_logo.jpg" alt="Twitter" style="width: 50px;" /></a>
+        </div>  
+        </div>
+      </div>
+    </div>
+      <p class="footer-note">&copy; 2025 AstroMind.</p>
+    </footer>
+  </body>
+</html>
